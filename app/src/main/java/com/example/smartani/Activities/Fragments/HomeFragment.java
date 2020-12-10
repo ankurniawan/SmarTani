@@ -19,13 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
-import static java.text.DateFormat.getDateTimeInstance;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -109,12 +104,12 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
 //                    Map<String, Object> map = (Map<String, Object>) postsnap.getValue();
-                    Long timeStampLong = (Long) postsnap.child("timestamp").getValue();
-                    DateFormat dateFormat = getDateTimeInstance();
-                    Date netDate = (new Date(timeStampLong));
+//                    Long timeStampLong = (Long) postsnap.child("timestamp").getValue();
+//                    DateFormat dateFormat = getDateTimeInstance();
+//                    Date netDate = (new Date(timeStampLong));
                     Post manual=new Post();
                     manual.setTitle((String) postsnap.child("title").getValue());
-                    Timestamp x=new Timestamp(timeStampLong);
+//                    Timestamp x=new Timestamp(timeStampLong);
 //                    manual.setTimestamp((Map<String, String>) x);
                     manual.setPicture((String) postsnap.child("picture").getValue());
                     manual.setUserId((String) postsnap.child("userId").getValue());
